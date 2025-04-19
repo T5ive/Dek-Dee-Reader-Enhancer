@@ -25,6 +25,9 @@ if (document.readyState === 'loading') {
     init();
 }
 
-const container = createAppContainer();
-const root = ReactDOM.createRoot(container);
-root.render(<Preview />);
+const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+if (isLocalhost) {
+    const container = createAppContainer();
+    const root = ReactDOM.createRoot(container);
+    root.render(<Preview />);
+}
