@@ -95,7 +95,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                                 onChange={(e) => updateSettings({ unfixHeader: e.target.checked })}
                                 style={{ marginRight: '8px' }}
                             />
-                            ไม่แสดง Header เวลาเลื่อนลง
+                            ซ่อน Header เวลาเลื่อนขึ้น/ลง
                         </label>
                     </div>
                     <div style={{ marginBottom: '16px' }}>
@@ -117,7 +117,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                                 onChange={(e) => updateSettings({ hideFooter: e.target.checked })}
                                 style={{ marginRight: '8px' }}
                             />
-                            ซ่อน Footer
+                            ซ่อน Footer เวลาเลื่อนขึ้น/ลง
                         </label>
                     </div>
                     <div style={{ marginBottom: '16px' }}>
@@ -128,7 +128,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                                 onChange={(e) => updateSettings({ hideScrollToTop: e.target.checked })}
                                 style={{ marginRight: '8px' }}
                             />
-                            ซ่อน Scroll to Top
+                            ซ่อน Scoll To Top เวลาเลื่อนขึ้น/ลง
                         </label>
                     </div>
 

@@ -14,7 +14,7 @@ const banner = `
 
 build({
     entryPoints: ['./src/main.tsx'],
-    outfile: './dist/dek-d-reader.user.js',
+    outfile: './dist/dek-d-reader-enhancer.user.js',
     bundle: true,
     minify: true,
     format: 'iife',
@@ -22,7 +22,7 @@ build({
     target: ['chrome100', 'firefox100'],
 }).then(() => {
     const time = new Date().toLocaleTimeString('th-TH');
-    const filePath = './dist/dek-d-reader.user.js';
+    const filePath = './dist/dek-d-reader-enhancer.user.js';
     console.log(`[${time}] ✅ Build สำเร็จแล้ว!`);
     console.log(`[${time}] 📂 ${filePath}`);
 });
