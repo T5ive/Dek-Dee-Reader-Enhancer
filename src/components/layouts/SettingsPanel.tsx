@@ -38,9 +38,8 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
         <div
             style={{
                 position: 'fixed',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
+                top: '100px',
+                right: '100px',
                 width: '400px',
                 backgroundColor: '#fff',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
@@ -48,6 +47,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                 zIndex: 9999,
                 padding: '16px',
                 fontFamily: 'Sarabun, sans-serif',
+                fontSize: '16px',
             }}
         >
             <div
@@ -132,7 +132,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                             ซ่อน Scoll To Top เวลาเลื่อนขึ้น/ลง
                         </label>
                     </div>
-                    
+
                     <div style={{ marginBottom: '16px' }}>
                         <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                             <input
@@ -144,7 +144,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                             ซ่อน แนะนำนิยาย
                         </label>
                     </div>
-                    
+
                     <div style={{ marginBottom: '16px' }}>
                         <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                             <input
@@ -156,7 +156,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                             ซ่อน อีบุ๊กลดราคา
                         </label>
                     </div>
-                    
+
                     <div style={{ marginBottom: '16px' }}>
                         <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                             <input
@@ -173,8 +173,8 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                         <button
                             onClick={handleReset}
                             style={{
-                                backgroundColor: '#f5f5f5',
-                                color: '#555',
+                                backgroundColor: '#ff5252',
+                                color: '#fff',
                                 border: '1px solid #ddd',
                                 borderRadius: '4px',
                                 padding: '8px 16px',
