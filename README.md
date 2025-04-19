@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# 🚀 Dek Dee Reader Enhancer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ปลั๊กอินเว็บเด็กดี เพื่อให้การอ่านมีคุณภาพมากยิ่งขึ้น
 
-Currently, two official plugins are available:
+- [x] เปลี่ยนสี Header ได้ ช่วยลดสีสันแสบตาเวลาอ่าน
+- [x] ซ่อน Header เวลาเลื่อนขึ้น/ลง
+- [x] ซ่อนแบนเนอร์โฆษณา
+- [x] ซ่อน Footer เวลาเลื่อนขึ้น/ลง
+- [x] ซ่อน Scoll To Top เวลาเลื่อนขึ้น/ลง
+- [x] เพิ่ม/ลด ขนาดตัวอักษร
+- [x] เพิ่ม/ลด ความหนาตัวอักษร
+- [x] เพิ่ม/ลด ระยะห่างบรรทัด
+- [x] เพิ่ม/ลด ระยะห่างตัวอักษร
+- [x] เพิ่ม/ลด เยื้องข้อความ
+- [x] จัดข้อความชิดขอบทั้งสองด้าน
+- [x] ปรับความกว้างเนื้อหาได้ (ถ้ากำหนดเป็น 0 จะให้ค่าความกว้าง 100%)
+- [x] แสดงเนื้อหาเต็มหน้าจอ
+- [x] กำหนดสีพื้นหลังและสีข้อความ
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ดาวน์โหลด
 
-## Expanding the ESLint configuration
+1. ติดตั้งปลั๊กอิน Tampermonkey
+   * Firefox - ติดตั้ง [Tampermonkey](https://tampermonkey.net/?ext=dhdg&browser=firefox)
+   * Chrome - ติดตั้ง [Tampermonkey](https://tampermonkey.net/?ext=dhdg&browser=chrome)
+   * Opera - ติดตั้ง [Tampermonkey](https://tampermonkey.net/?ext=dhdg&browser=opera)
+   * Safari - ติดตั้ง [Tampermonkey](https://tampermonkey.net/?ext=dhdg&browser=safari)
+   * Dolphin - ติดตั้ง [Tampermonkey](https://tampermonkey.net/?ext=dhdg&browser=dolphin)
+   * UC Browser - ติดตั้ง [Tampermonkey](https://tampermonkey.net/?ext=dhdg&browser=ucweb)
+2. ติดตั้งปลั๊กอิน Dek Dee Reader Enhancer 
+   * [คลิกที่นี่เพื่อติดตั้ง](https://raw.githubusercontent.com/T5ive/Dek-Dee-Reader-Enhancer/master/dek-d-reader-enhancer.user.js)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## การใช้งาน
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+หลังจากติดตั้งแล้ว สามารถตั้งค่าได้ที่รูปฟันเฟืองแถบด้านบน ที่อยู่ข้าง ๆ การตั้งค่าเดิมที่เว็บเด็กดีมีอยู่แล้ว\
+หากคุณต้องการอัปเดตสคริปต์ ให้คุณกดติดตั้งซ้ำอีกครั้ง
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- [แจ้งปัญหา](https://github.com/T5ive/Dek-Dee-Reader-Enhancer/issues)
+- [พูดคุย, เสนอแนะ](https://github.com/T5ive/Dek-Dee-Reader-Enhancer/discussions)
