@@ -135,6 +135,7 @@ export const useSettings = () => {
         const textIndentStyle = isIndentA ? `${appliedSettings.textIndent}px` : '0px';
 
         const fontSize = `font-size: ${appliedSettings.fontSize}px !important;`;
+        const fontWeight = `font-weight: ${appliedSettings.fontWeight} !important;`;
         const lineHeight = `line-height: ${appliedSettings.lineHeight} !important;`;
         const letterSpacing = `letter-spacing: ${appliedSettings.letterSpacing}px !important;`;
         const textIndent = `text-indent: ${textIndentStyle} !important;`;
@@ -143,7 +144,7 @@ export const useSettings = () => {
         const padding = `padding: ${appliedSettings.padding}px !important;`;
         const margin = 'margin: 0 auto !important;';
         const textAlign = `text-align: ${textAlignStyle} !important;`;
-        const style = `${fontSize} ${lineHeight} ${letterSpacing} ${textIndent} ${color} ${backgroundColor} ${padding} ${margin} ${textAlign}`;
+        const style = `${fontSize} ${fontWeight} ${lineHeight} ${letterSpacing} ${textIndent} ${color} ${backgroundColor} ${padding} ${margin} ${textAlign}`;
 
         element.setAttribute('style', style);
     };

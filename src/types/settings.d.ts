@@ -1,6 +1,7 @@
 export interface Settings {
     id: string;
     fontSize: number;
+    fontWeight: number;
     lineHeight: number;
     letterSpacing: number;
     textIndent: number;

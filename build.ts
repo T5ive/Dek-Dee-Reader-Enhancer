@@ -4,7 +4,7 @@ const banner = `
 // ==UserScript==
 // @name         Dek Dee Reader Enhancer
 // @namespace    https://github.com/t5ive/
-// @version      1.0
+// @version      1.1
 // @description  UI ปรับแต่งการอ่านแบบ Firefox Reader View
 // @author       T5ive
 // @match        https://writer.dek-d.com/dekdee/writer/viewlongc.php?id=*

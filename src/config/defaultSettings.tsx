@@ -3,6 +3,7 @@ import { Settings } from '../types/settings';
 export const defaultSettings: Settings = {
     id: '',
     fontSize: 18,
+    fontWeight: 400,
     lineHeight: 1.5,
     letterSpacing: 0.5,
     textIndent: 50,

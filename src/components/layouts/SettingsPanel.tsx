@@ -5,6 +5,7 @@ import { InputColor } from '../ui/inputs/inputColor';
 import { ButtonTab } from '../ui/buttons/buttonTab';
 import { ButtonColor } from '../ui/buttons/buttonColor';
 import { ThemeManager } from '../../features/themeManager';
+import { InputNumber } from '../ui/inputs/inputNumber';
 
 interface SettingsPanelProps {
     settings: Settings;
@@ -163,6 +164,19 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                             step={1}
                             value={settings.fontSize}
                             onChange={(value) => updateSettings({ fontSize: value })}
+                        />
+                    </div>
+
+                    <div style={{ marginBottom: '16px' }}>
+                        <label style={{ display: 'block', marginBottom: '8px' }}>
+                            ความหนาตัวอักษร: {settings.fontWeight}
+                        </label>
+                        <InputNumber
+                            min={400}
+                            max={600}
+                            step={200}
+                            value={settings.fontWeight}
+                            onChange={(value) => updateSettings({ fontWeight: value })}
                         />
                     </div>
 
