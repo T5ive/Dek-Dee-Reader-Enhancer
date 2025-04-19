@@ -10,6 +10,7 @@ export const defaultSettings: Settings = {
     backgroundColor: '#ffffff',
     textColor: '#333333',
     contentWidth: 800,
+    mainCenterFullWidth: false,
     padding: 16,
     justifyText: false,
     chnageHeaderColor: true,
@@ -17,5 +18,7 @@ export const defaultSettings: Settings = {
     hideAds: true,
     hideFooter: true,
     hideScrollToTop: true,
-    mainCenterFullWidth: false,
+    hideSuggestList: true,
+    hideDiscountList: true,
+    hideComment: true,
 };

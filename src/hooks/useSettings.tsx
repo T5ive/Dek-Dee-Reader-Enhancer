@@ -47,10 +47,7 @@ export const useSettings = () => {
     };
 
     const hookBanner = (appliedSettings: Settings) => {
-        const banner = document.querySelector('#banner');
-        if (!banner) return;
-        const displayStyle = appliedSettings.hideAds ? 'none' : 'flex';
-        banner.setAttribute('style', `display: ${displayStyle} !important;`);
+        hideElements('#banner', appliedSettings.hideAds, 'flex');
     };
 
     const hookFooter = (appliedSettings: Settings) => {
@@ -64,10 +61,7 @@ export const useSettings = () => {
     };
 
     const hookScrollToTop = (appliedSettings: Settings) => {
-        const button = document.querySelector('.scroll-to-top-btn');
-        if (!button) return;
-        const displayStyle = appliedSettings.hideScrollToTop ? 'none' : 'flex';
-        button.setAttribute('style', `display: ${displayStyle} !important;`);
+        hideElements('.scroll-to-top-btn', appliedSettings.hideAds, 'flex');
     };
 
     const hookMain = (appliedSettings: Settings) => {
@@ -118,6 +112,12 @@ export const useSettings = () => {
         });
     };
 
+    const hookOuter = (appliedSettings: Settings) => {
+        hideElements('#suggest-list', appliedSettings.hideSuggestList);
+        hideElements('#ebook-rand-list', appliedSettings.hideDiscountList);
+        hideElements('#show-mini-comment-app', appliedSettings.hideComment);
+    };
+
     const applySettings = (appliedSettings: Settings) => {
         hookHeader(appliedSettings);
         hookBanner(appliedSettings);
@@ -127,6 +127,7 @@ export const useSettings = () => {
         hookMainCenter(appliedSettings);
         hookStoryContent(appliedSettings);
         hookContent(appliedSettings);
+        hookOuter(appliedSettings);
     };
 
     const setStyle = (element: Element, appliedSettings: Settings) => {
@@ -147,6 +148,13 @@ export const useSettings = () => {
         const style = `${fontSize} ${fontWeight} ${lineHeight} ${letterSpacing} ${textIndent} ${color} ${backgroundColor} ${padding} ${margin} ${textAlign}`;
 
         element.setAttribute('style', style);
+    };
+
+    const hideElements = (selectors: string, config: boolean, display: string = 'block') => {
+        const selector = document.querySelector(selectors);
+        if (!selector) return;
+        const displayStyle = config ? 'none' : display;
+        selector.setAttribute('style', `display: ${displayStyle} !important;`);
     };
 
     // ใช้การตั้งค่าเมื่อ settings เปลี่ยนแปลง

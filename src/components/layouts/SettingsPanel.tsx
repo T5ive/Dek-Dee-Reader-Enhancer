@@ -132,6 +132,42 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ settings, updateSe
                             ซ่อน Scoll To Top เวลาเลื่อนขึ้น/ลง
                         </label>
                     </div>
+                    
+                    <div style={{ marginBottom: '16px' }}>
+                        <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+                            <input
+                                type="checkbox"
+                                checked={settings.hideSuggestList}
+                                onChange={(e) => updateSettings({ hideSuggestList: e.target.checked })}
+                                style={{ marginRight: '8px' }}
+                            />
+                            ซ่อน แนะนำนิยาย
+                        </label>
+                    </div>
+                    
+                    <div style={{ marginBottom: '16px' }}>
+                        <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+                            <input
+                                type="checkbox"
+                                checked={settings.hideDiscountList}
+                                onChange={(e) => updateSettings({ hideDiscountList: e.target.checked })}
+                                style={{ marginRight: '8px' }}
+                            />
+                            ซ่อน อีบุ๊กลดราคา
+                        </label>
+                    </div>
+                    
+                    <div style={{ marginBottom: '16px' }}>
+                        <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+                            <input
+                                type="checkbox"
+                                checked={settings.hideComment}
+                                onChange={(e) => updateSettings({ hideComment: e.target.checked })}
+                                style={{ marginRight: '8px' }}
+                            />
+                            ซ่อน ความคิดเห็น
+                        </label>
+                    </div>
 
                     <div style={{ marginTop: '16px', textAlign: 'center' }}>
                         <button
