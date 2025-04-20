@@ -49,8 +49,12 @@ export const ThemeManager: React.FC<ThemeManagerProps> = ({
 			name: themeName.trim(),
 			settings: { ...currentSettings, id: id },
 		};
-
-		const updatedThemes = [...themes, newTheme];
+	
+		const filteredThemes = isOverwrite
+			? themes.filter((theme) => theme.name !== themeName.trim())
+			: themes;
+	
+		const updatedThemes = [...filteredThemes, newTheme];
 		setThemes(updatedThemes);
 		saveToStorage('dek-d-reader-themes', updatedThemes);
 		setThemeName('');
