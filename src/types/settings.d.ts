@@ -1,18 +1,7 @@
 export interface Settings {
 	id: string;
-	fontFamily: string;
-	fontSize: number;
-	fontWeight: number;
-	lineHeight: number;
-	letterSpacing: number;
-	textIndent: number;
-	backgroundColor: string;
-	textColor: string;
-	contentWidth: number;
-	padding: number;
-	mainCenterFullWidth: boolean;
-	justifyText: boolean;
-	chnageHeaderColor: boolean;
+	//General
+	changeHeaderColor: boolean;
 	unfixHeader: boolean;
 	hideAds: boolean;
 	hideFooter: boolean;
@@ -20,4 +9,19 @@ export interface Settings {
 	hideSuggestList: boolean;
 	hideDiscountList: boolean;
 	hideComment: boolean;
+	//Text
+	fontFamily: string;
+	fontSize: number;
+	fontWeight: number;
+	lineHeight: number;
+	letterSpacing: number;
+	textIndent: number;
+	justifyText: boolean;
+	//Layout
+	contentWidth: number;
+	padding: number;
+	mainCenterFullWidth: boolean;
+	//Color	
+	backgroundColor: string;
+	textColor: string;
 }

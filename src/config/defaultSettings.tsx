@@ -2,19 +2,8 @@ import { Settings } from '../types/settings';
 
 export const defaultSettings: Settings = {
 	id: '',
-	fontFamily: 'THSarabunNew',
-	fontSize: 18,
-	fontWeight: 400,
-	lineHeight: 1.5,
-	letterSpacing: 0.5,
-	textIndent: 50,
-	backgroundColor: '#ffffff',
-	textColor: '#333333',
-	contentWidth: 800,
-	mainCenterFullWidth: false,
-	padding: 16,
-	justifyText: false,
-	chnageHeaderColor: true,
+	//General	
+	changeHeaderColor: true,
 	unfixHeader: true,
 	hideAds: true,
 	hideFooter: true,
@@ -22,4 +11,19 @@ export const defaultSettings: Settings = {
 	hideSuggestList: true,
 	hideDiscountList: true,
 	hideComment: true,
+	//Text
+	fontFamily: 'THSarabunNew',
+	fontSize: 18,
+	fontWeight: 400,
+	lineHeight: 1.5,
+	letterSpacing: 0.5,
+	textIndent: 50,
+	justifyText: false,
+	//Layout
+	contentWidth: 800,
+	mainCenterFullWidth: false,
+	padding: 16,
+	//Color	
+	backgroundColor: '#ffffff',
+	textColor: '#333333',
 };

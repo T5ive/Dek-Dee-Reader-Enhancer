@@ -38,7 +38,7 @@ export const useSettings = () => {
 
 		const header1 = document.getElementById('head1');
 		if (header1) {
-			if (appliedSettings.chnageHeaderColor) {
+			if (appliedSettings.changeHeaderColor) {
 				header1.style.background = appliedSettings.backgroundColor;
 			} else {
 				header1.style.background = '#FFC22F';

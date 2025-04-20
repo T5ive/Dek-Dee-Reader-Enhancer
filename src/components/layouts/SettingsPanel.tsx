@@ -149,9 +149,9 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 						>
 							<input
 								type="checkbox"
-								checked={settings.chnageHeaderColor}
+								checked={settings.changeHeaderColor}
 								onChange={(e) =>
-									updateSettings({ chnageHeaderColor: e.target.checked })
+									updateSettings({ changeHeaderColor: e.target.checked })
 								}
 								style={{ marginRight: '8px' }}
 							/>

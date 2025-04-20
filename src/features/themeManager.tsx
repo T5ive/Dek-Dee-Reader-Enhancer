@@ -87,7 +87,7 @@ export const ThemeManager: React.FC<ThemeManagerProps> = ({
 			'contentWidth',
 			'padding',
 			'justifyText',
-			'chnageHeaderColor',
+			'changeHeaderColor',
 			'unfixHeader',
 			'hideAds',
 			'hideFooter',
