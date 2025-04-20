@@ -11,6 +11,7 @@ export const defaultSettings: Settings = {
 	hideSuggestList: true,
 	hideDiscountList: true,
 	hideComment: true,
+	download: true,
 	//Text
 	fontFamily: 'THSarabunNew',
 	fontSize: 18,

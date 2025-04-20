@@ -113,11 +113,79 @@ export const useSettings = () => {
 		storyContent.setAttribute('style', style);
 	};
 
+	const hookChapterBox = (appliedSettings: Settings) => {
+		const buttonId = 'download-button';
+		const existingButton = document.getElementById(buttonId);
+
+		if (!appliedSettings.download) {
+			existingButton?.remove();
+			return;
+		}
+
+		if (existingButton) return;
+
+		const storyContent = document.querySelector('#story-content');
+		if (!storyContent) return;
+
+		const chapterBox = document.querySelector('.chapter-box-wrapper');
+		if (!chapterBox) return;
+
+		const button = document.createElement('button');
+		button.id = buttonId;
+		button.innerText = '💾 ดาวน์โหลดตอนนี้';
+
+		Object.assign(button.style, {
+			padding: '8px 16px',
+			margin: '10px 0',
+			fontSize: '14px',
+			backgroundColor: '#1E90FF',
+			color: '#fff',
+			border: 'none',
+			borderRadius: '5px',
+			cursor: 'pointer',
+			boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+			transition: 'background-color 0.3s ease',
+		});
+		button.addEventListener('mouseover', () => {
+			button.style.backgroundColor = '#1E80FF';
+		});
+		button.addEventListener('mouseout', () => {
+			button.style.backgroundColor = '#1E90FF';
+		});
+
+		button.addEventListener('click', () => {
+			const rawText = (storyContent as HTMLElement).innerText.trim();
+
+			const cleanedText = rawText
+				.split('\n')
+				.map((line) => line.trim())
+				.filter((line) => line.length > 0)
+				.join('\n');
+
+			const blob = new Blob([cleanedText], {
+				type: 'text/plain;charset=utf-8',
+			});
+
+			const link = document.createElement('a');
+			link.href = URL.createObjectURL(blob);
+
+			const title = document.title || 'dekd-chapter';
+			link.download = `${title.replace(/[\\/:*?"<>|]/g, '')}.txt`;
+
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		});
+
+		chapterBox.appendChild(button);
+	};
+
 	const hookContent = (appliedSettings: Settings) => {
 		const contentElements = document.querySelectorAll('#story-content *');
 		if (!contentElements) return;
 		for (const element of contentElements) {
 			setStyle(element, appliedSettings);
+			setContent(element);
 		}
 	};
 
@@ -135,6 +203,7 @@ export const useSettings = () => {
 		hookMain(appliedSettings);
 		hookMainCenter(appliedSettings);
 		hookStoryContent(appliedSettings);
+		hookChapterBox(appliedSettings);
 		hookContent(appliedSettings);
 		hookOuter(appliedSettings);
 	};
@@ -166,6 +235,13 @@ export const useSettings = () => {
 		element.setAttribute('style', style);
 	};
 
+	const setContent = (element: Element) => {
+		const content = element.textContent;
+		if (!content) return;
+		const replacedContent = replaceUnicodeRange(content);
+		element.textContent = replacedContent;
+	};
+
 	const hideElements = (
 		selectors: string,
 		config: boolean,
@@ -175,6 +251,37 @@ export const useSettings = () => {
 		if (!selector) return;
 		const displayStyle = config ? 'none' : display;
 		selector.setAttribute('style', `display: ${displayStyle} !important;`);
+	};
+
+	const unicodeMap = {
+		'\u0E65': 'ก',
+		'\u0E66': 'ข',
+		'\u0E67': 'ฃ',
+		'\u0E68': 'ค',
+		'\u0E69': 'ฅ',
+		'\u0E6A': 'ฆ',
+		'\u0E6B': 'ง',
+		'\u0E6C': 'จ',
+		'\u0E6D': 'ฉ',
+		'\u0E6E': 'ช',
+		'\u0E6F': 'ซ',
+		'\u0E70': 'ฌ',
+		'\u0E71': 'ญ',
+		'\u0E72': 'ฎ',
+		'\u0E73': 'ฏ',
+		'\u0E74': 'ฐ',
+		'\u0E75': 'ฑ',
+		'\u0E76': 'ฒ',
+		'\u0E77': 'ณ',
+		'\u0E78': 'ด',
+		'\u0E79': 'ต',
+	};
+
+	const replaceUnicodeRange = (input: string) => {
+		return input.replace(
+			/[\u0E65-\u0E79]/g,
+			(match) => unicodeMap[match as keyof typeof unicodeMap] || match,
+		);
 	};
 
 	// ใช้การตั้งค่าเมื่อ settings เปลี่ยนแปลง

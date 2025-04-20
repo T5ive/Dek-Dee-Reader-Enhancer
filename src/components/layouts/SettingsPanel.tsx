@@ -293,6 +293,24 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 						</label>
 					</div>
 
+					<div style={{ marginBottom: '16px' }}>
+						<label
+							style={{
+								display: 'flex',
+								alignItems: 'center',
+								cursor: 'pointer',
+							}}
+						>
+							<input
+								type="checkbox"
+								checked={settings.download}
+								onChange={(e) => updateSettings({ download: e.target.checked })}
+								style={{ marginRight: '8px' }}
+							/>
+							เพิ่มปุ่มดาวน์โหลด
+						</label>
+					</div>
+
 					<div style={{ marginTop: '16px', textAlign: 'center' }}>
 						<button
 							type="button"

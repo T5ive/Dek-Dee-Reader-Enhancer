@@ -9,6 +9,7 @@ export interface Settings {
 	hideSuggestList: boolean;
 	hideDiscountList: boolean;
 	hideComment: boolean;
+	download: boolean;
 	//Text
 	fontFamily: string;
 	fontSize: number;
