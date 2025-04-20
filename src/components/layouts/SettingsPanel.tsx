@@ -7,6 +7,7 @@ import { ButtonColor } from '../ui/buttons/buttonColor';
 import { ThemeManager } from '../../features/themeManager';
 import { InputNumber } from '../ui/inputs/inputNumber';
 import styled from 'styled-components';
+import { Select } from '../ui/inputs/select';
 
 interface SettingsPanelProps {
 	settings: Settings;
@@ -15,34 +16,7 @@ interface SettingsPanelProps {
 	onClose: () => void;
 }
 
-//TODO: แยกแถบการตั้งค่าออกเป็นคอมโพเนนต์ย่อย
-export const SettingsPanel: React.FC<SettingsPanelProps> = ({
-	settings,
-	updateSettings,
-	resetToDefault,
-	onClose,
-}) => {
-	const [activeTab, setActiveTab] = useState<
-		'general' | 'text' | 'layout' | 'color' | 'themes'
-	>('general');
-	const defaultSettingsRef = useRef<Settings>(settings);
-
-	const handleReset = () => {
-		if (window.confirm('คุณต้องการรีเซ็ตการตั้งค่าทั้งหมดเป็นค่าเริ่มต้นหรือไม่?')) {
-			resetToDefault();
-		}
-	};
-
-	const predefinedThemes = [
-		{ bg: '#ffffff', text: '#000000', label: 'ขาว-ดำ (มาตรฐาน)' },
-		{ bg: '#f8f7f1', text: '#333333', label: 'สีกระดาษ' },
-		{ bg: '#282c35', text: '#ffffff', label: 'โหมดกลางคืน' },
-		{ bg: '#0a1929', text: '#e6f0ff', label: 'น้ำเงินเข้ม' },
-		{ bg: '#2d2d2d', text: '#e0e0e0', label: 'สีเทาเข้ม' },
-		{ bg: '#f0e6d6', text: '#5b4636', label: 'สีซีเปีย' },
-	];
-
-	const SettingsPanel = styled.div`
+const SettingPanel = styled.div`
 	position: fixed;
 	top: 100px;
 	right: 100px;
@@ -65,8 +39,47 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 	}
 `;
 
+//TODO: แยกแถบการตั้งค่าออกเป็นคอมโพเนนต์ย่อย
+export const SettingsPanel: React.FC<SettingsPanelProps> = ({
+	settings,
+	updateSettings,
+	resetToDefault,
+	onClose,
+}) => {
+	const [activeTab, setActiveTab] = useState<
+		'general' | 'text' | 'layout' | 'color' | 'themes'
+	>('general');
+
+	const fontOptions = [
+		{ value: 'THSarabunNew_content', label: 'THSarabunNew' },
+		{ value: 'Sarabun_content', label: 'Sarabun' },
+		{ value: 'Mali_content', label: 'Mali' },
+		{ value: 'Trirong_content', label: 'Trirong' },
+		{ value: 'Maitree_content', label: 'Maitree' },
+		{ value: 'Taviraj_content', label: 'Taviraj' },
+		{ value: 'Kodchasan_content', label: 'Kodchasan' },
+		{ value: 'ChakraPetch_content', label: 'ChakraPetch' },
+	];
+
+	const defaultSettingsRef = useRef<Settings>(settings);
+
+	const handleReset = () => {
+		if (window.confirm('คุณต้องการรีเซ็ตการตั้งค่าทั้งหมดเป็นค่าเริ่มต้นหรือไม่?')) {
+			resetToDefault();
+		}
+	};
+
+	const predefinedThemes = [
+		{ bg: '#ffffff', text: '#000000', label: 'ขาว-ดำ (มาตรฐาน)' },
+		{ bg: '#f8f7f1', text: '#333333', label: 'สีกระดาษ' },
+		{ bg: '#282c35', text: '#ffffff', label: 'โหมดกลางคืน' },
+		{ bg: '#0a1929', text: '#e6f0ff', label: 'น้ำเงินเข้ม' },
+		{ bg: '#2d2d2d', text: '#e0e0e0', label: 'สีเทาเข้ม' },
+		{ bg: '#f0e6d6', text: '#5b4636', label: 'สีซีเปีย' },
+	];
+
 	return (
-		<SettingsPanel>
+		<SettingPanel>
 			<div
 				style={{
 					display: 'flex',
@@ -302,6 +315,16 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 
 			{activeTab === 'text' && (
 				<div>
+					<div style={{ marginBottom: '16px' }}>
+						<label style={{ display: 'block', marginBottom: '8px' }}>
+							รูปแบบตัวอักษร
+						</label>
+						<Select
+							value={settings.fontFamily}
+							options={fontOptions}
+							onChange={(value) => updateSettings({ fontFamily: value })}
+						/>
+					</div>
 					<div style={{ marginBottom: '16px' }}>
 						<label style={{ display: 'block', marginBottom: '8px' }}>
 							ขนาดตัวอักษร: {settings.fontSize}px
@@ -589,6 +612,6 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 					บันทึกการตั้งค่า
 				</button>
 			</div>
-		</SettingsPanel>
+		</SettingPanel>
 	);
 };

@@ -150,6 +150,7 @@ export const useSettings = () => {
 			? `${appliedSettings.textIndent}px`
 			: '0px';
 
+		const fontFamily = `font-family: ${appliedSettings.fontFamily} !important;`;
 		const fontSize = `font-size: ${appliedSettings.fontSize}px !important;`;
 		const fontWeight = `font-weight: ${appliedSettings.fontWeight} !important;`;
 		const lineHeight = `line-height: ${appliedSettings.lineHeight} !important;`;
@@ -160,7 +161,7 @@ export const useSettings = () => {
 		const padding = `padding: ${appliedSettings.padding}px !important;`;
 		const margin = 'margin: 0 auto !important;';
 		const textAlign = `text-align: ${textAlignStyle} !important;`;
-		const style = `${fontSize} ${fontWeight} ${lineHeight} ${letterSpacing} ${textIndent} ${color} ${backgroundColor} ${padding} ${margin} ${textAlign}`;
+		const style = `${fontFamily} ${fontSize} ${fontWeight} ${lineHeight} ${letterSpacing} ${textIndent} ${color} ${backgroundColor} ${padding} ${margin} ${textAlign}`;
 
 		element.setAttribute('style', style);
 	};

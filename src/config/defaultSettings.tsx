@@ -2,6 +2,7 @@ import { Settings } from '../types/settings';
 
 export const defaultSettings: Settings = {
 	id: '',
+	fontFamily: 'THSarabunNew',
 	fontSize: 18,
 	fontWeight: 400,
 	lineHeight: 1.5,

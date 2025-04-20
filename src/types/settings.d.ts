@@ -1,5 +1,6 @@
 export interface Settings {
 	id: string;
+	fontFamily: string;
 	fontSize: number;
 	fontWeight: number;
 	lineHeight: number;

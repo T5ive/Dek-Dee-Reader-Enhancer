@@ -24,7 +24,7 @@ export const InputNumber: React.FC<InputNumberProps> = ({
 			value={value}
 			onChange={(e) => onChange(Number.parseFloat(e.target.value))}
 			style={{
-				width: '100%',
+				width: 'calc(100% - 18px)',
 				padding: '8px',
 				borderRadius: '4px',
 				border: '1px solid #ccc',
