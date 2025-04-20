@@ -6,6 +6,7 @@ import { ButtonTab } from '../ui/buttons/buttonTab';
 import { ButtonColor } from '../ui/buttons/buttonColor';
 import { ThemeManager } from '../../features/themeManager';
 import { InputNumber } from '../ui/inputs/inputNumber';
+import styled from 'styled-components';
 
 interface SettingsPanelProps {
 	settings: Settings;
@@ -41,22 +42,31 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 		{ bg: '#f0e6d6', text: '#5b4636', label: 'สีซีเปีย' },
 	];
 
+	const SettingsPanel = styled.div`
+	position: fixed;
+	top: 100px;
+	right: 100px;
+	width: 400px;
+	background-color: #fff;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	border-radius: 8px;
+	z-index: 9999;
+	padding: 16px;
+	font-family: 'Sarabun', sans-serif;
+	font-size: 16px;
+
+	@media (max-width: 768px) {
+		top: 16px;
+		right: 16px;
+		left: 16px;
+		width: auto;
+		padding: 12px;
+		font-size: 15px;
+	}
+`;
+
 	return (
-		<div
-			style={{
-				position: 'fixed',
-				top: '100px',
-				right: '100px',
-				width: '400px',
-				backgroundColor: '#fff',
-				boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
-				borderRadius: '8px',
-				zIndex: 9999,
-				padding: '16px',
-				fontFamily: 'Sarabun, sans-serif',
-				fontSize: '16px',
-			}}
-		>
+		<SettingsPanel>
 			<div
 				style={{
 					display: 'flex',
@@ -579,6 +589,6 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 					บันทึกการตั้งค่า
 				</button>
 			</div>
-		</div>
+		</SettingsPanel>
 	);
 };
