@@ -73,12 +73,14 @@ export const useSettings = () => {
 			`background: ${appliedSettings.backgroundColor} !important;`,
 		);
 
-		const others = document.querySelector('#novel_action_wrapper');
+		const others = document.querySelectorAll('#novel_action_wrapper');
 		if (!others) return;
-		others.setAttribute(
-			'style',
-			`background: ${appliedSettings.backgroundColor} !important;`,
-		);
+		others.forEach((other) => {
+			other.setAttribute(
+				'style',
+				`background: ${appliedSettings.backgroundColor} !important;`,
+			);
+		});
 	};
 
 	const hookMainCenter = (appliedSettings: Settings) => {
