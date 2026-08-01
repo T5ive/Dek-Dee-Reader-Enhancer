@@ -2,10 +2,10 @@
 // ==UserScript==
 // @name         Dek Dee Reader Enhancer
 // @namespace    https://github.com/T5ive/
-// @version      2.0.0
+// @version      2.0.2
 // @description  UI ปรับแต่งการอ่านแบบ Firefox Reader View
 // @author       T5ive
-// @match        https://writer.dek-d.com/dekdee/writer/viewlongc.php?id=*
+// @match        https://writer.dek-d.com/*/writer/viewlongc.php*
 // @updateURL    https://raw.githubusercontent.com/T5ive/Dek-Dee-Reader-Enhancer/master/dek-d-reader-enhancer.user.js
 // @downloadURL  https://raw.githubusercontent.com/T5ive/Dek-Dee-Reader-Enhancer/master/dek-d-reader-enhancer.user.js
 // @grant        none
